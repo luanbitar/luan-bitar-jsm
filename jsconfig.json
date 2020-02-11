@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "commonjs",
+    "lib": ["es2015"],
+    "strict": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "strictFunctionTypes": true,
+    "strictBindCallApply": true,
+    "noImplicitThis": true,
+    "alwaysStrict": true,
+    "baseUrl": "./src",
+    "paths": {
+      "components/*": ["./components/*"],
+      "constants/*": ["./constants/*"],
+      "containers/*": ["./containers/*"],
+      "ducks/*": ["./ducks/*"],
+      "enhancers/*": ["./enhancers/*"],
+      "layouts/*": ["./layouts/*"],
+      "pages/*": ["./pages/*"],
+      "shared/*": ["./shared/*"],
+      "styles/*": ["./styles/*"],
+      "images/*": ["./images/*"],
+      "utils/*": ["./utils/*"]
+    },
+    "allowSyntheticDefaultImports": false,
+    "esModuleInterop": true
+  }
+}
