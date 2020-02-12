@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from "react"
 import { Helmet } from "react-helmet"
 import "./ListUsers.scss"
+import axios from "axios"
 
 function Index() {
   const [date, setDate] = useState(null)
   useEffect(() => {
     async function getDate() {
-      const res = await fetch("/api/date")
-      const newDate = await res.text()
-      setDate(newDate)
+      const res = await axios.post("/api/users", {})
+      setDate(JSON.stringify(res))
     }
     getDate()
   }, [])
