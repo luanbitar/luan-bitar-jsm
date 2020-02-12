@@ -28,8 +28,8 @@
     "@types/mongodb": "^3.3.15"
   },
   "scripts": {
-    "start": "now dev",
-    "start:front": "gatsby develop",
+    "start": "gatsby develop",
+    "start:all": "now dev",
     "build": "gatsby build"
   }
 }
