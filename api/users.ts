@@ -1,8 +1,11 @@
 import { NowRequest, NowResponse } from "@now/node"
 import getDatabaseReference from "./_utils/db"
 import labels from "./_data/labels"
+import cors from "./_utils/cors"
 
 export default async (req: NowRequest, res: NowResponse) => {
+  cors(req, res)
+
   const db = await getDatabaseReference()
   const collection = await db.collection("users")
 

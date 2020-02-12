@@ -19,7 +19,6 @@
     "gatsby-transformer-sharp": "^2.3.14",
     "mongodb": "^3.5.2",
     "node-sass": "^4.13.1",
-    "now": "^17.0.3",
     "react": "^16.5.1",
     "react-dom": "^16.5.1",
     "react-helmet": "^5.2.0"

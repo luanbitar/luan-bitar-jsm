@@ -1,0 +1,25 @@
+{
+  "env": {
+    "MONGO_DATABASE_URL": "@mongo-url",
+    "MONGO_DATABASE_NAME": "@mongo-db-name"
+  },
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "*"
+        },
+        {
+          "key": "Access-Control-Allow-Methods",
+          "value": "GET, POST, PATCH, PUT, DELETE, OPTIONS"
+        },
+        {
+          "key": "Access-Control-Allow-Headers",
+          "value": "Origin, X-Requested-With, Content-Type, Accept, Authorization, Methods"
+        }
+      ]
+    }
+  ]
+}
