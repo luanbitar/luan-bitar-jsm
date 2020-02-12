@@ -39,7 +39,7 @@ function ListUsers({ users }) {
       </p>
       <br />
       <h2>The date according to Node.js (TypeScript) is:</h2>
-      <p>{users.length ? JSON.stringify(users) : "Loading date..."}</p>
+      <p>{users && users.length ? JSON.stringify(users) : "Loading date..."}</p>
     </main>
   )
 }
