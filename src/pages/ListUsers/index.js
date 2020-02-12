@@ -1,17 +1,8 @@
-import React, { useEffect, useState } from "react"
-import { Helmet } from "react-helmet"
 import "./ListUsers.scss"
-import axios from "axios"
+import { Helmet } from "react-helmet"
+import ListUsersLogic from "./logic"
 
-function Index() {
-  const [date, setDate] = useState(null)
-  useEffect(() => {
-    async function getDate() {
-      const res = await axios.post("/api/users", {})
-      setDate(JSON.stringify(res))
-    }
-    getDate()
-  }, [])
+function ListUsers({ users }) {
   return (
     <main>
       <Helmet>
@@ -48,9 +39,9 @@ function Index() {
       </p>
       <br />
       <h2>The date according to Node.js (TypeScript) is:</h2>
-      <p>{date ? date : "Loading date..."}</p>
+      <p>{users.length ? JSON.stringify(users) : "Loading date..."}</p>
     </main>
   )
 }
 
-export default Index
+export default ListUsersLogic(ListUsers)
