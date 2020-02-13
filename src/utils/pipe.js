@@ -1,4 +1,4 @@
-const pipe = (...layers) => BaseComponent => () => {
+const pipe = (...layers) => BaseComponent => ComponentProps => {
   const props = layers.reduce((prevProps, layer) => {
     const layerProps = layer.call(null, prevProps)
 
@@ -8,7 +8,7 @@ const pipe = (...layers) => BaseComponent => () => {
     }
   }, {})
 
-  return <BaseComponent {...props} />
+  return <BaseComponent {...props} {...ComponentProps} />
 }
 
 export default pipe

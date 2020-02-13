@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-export default function() {
+function state() {
   const [users, setUsers] = useState([])
 
   return {
@@ -8,3 +8,5 @@ export default function() {
     setUsers,
   }
 }
+
+export default state

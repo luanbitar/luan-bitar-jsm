@@ -4,14 +4,19 @@ import { useEffect } from "react"
 const { GATSBY_API_ROOT_URL } = process.env
 const USERS_URL = `${GATSBY_API_ROOT_URL || "/api"}/users`
 
-export default function({ setUsers }) {
+function effects({ setUsers }) {
   useEffect(() => {
     async function getUsers() {
-      const { data } = await axios.post(USERS_URL, {})
+      const { data } = await axios.post(USERS_URL, {
+        label: "laborious",
+      })
       const { users } = data
+
+      console.log({ data })
       setUsers(users)
-      console.log({ GATSBY_API_ROOT_URL, data })
     }
     getUsers()
   }, [])
 }
+
+export default effects

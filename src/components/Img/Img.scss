@@ -1,0 +1,9 @@
+.picture {
+  &.-blured {
+    filter: blur(5px);
+  }
+
+  > .img-element {
+    width: inherit;
+  }
+}
