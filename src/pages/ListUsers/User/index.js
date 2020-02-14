@@ -7,7 +7,11 @@ function User({ name, picture }) {
   return (
     <div className="user-container">
       <p className="name">{fullName}</p>
-      <Img className="user-profile" {...picture} />
+      <Img
+        className="user-profile"
+        src={picture.large}
+        srcPreview={picture.thumbnail}
+      />
     </div>
   )
 }

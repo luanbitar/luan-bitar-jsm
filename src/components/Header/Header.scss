@@ -1,0 +1,68 @@
+$spacing-jsm-logo: 140px;
+
+.header-container {
+  background: $quartz;
+  padding: 20px 0;
+
+  > .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+
+    > .jsm-logo {
+      width: 100px;
+      color: white;
+    }
+
+    > .search-icon {
+      width: 30px;
+      cursor: pointer;
+    }
+
+    > .input-container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: $quartz;
+      width: calc(100% - #{$spacing-jsm-logo});
+      margin-left: $spacing-jsm-logo;
+      box-sizing: border-box;
+      height: 100%;
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      transform: translateX(100%);
+      z-index: -1;
+      &.-open {
+        transform: translateX(0);
+        z-index: 0;
+      }
+
+      > .search-input {
+        flex: 1;
+        max-width: 300px;
+        background: transparent;
+        border: 1px solid white;
+        border-radius: 28px;
+        height: 36px;
+        outline: none;
+        color: white;
+        padding: 0 15px;
+        font-size: 16px;
+        font-weight: 300;
+        min-width: 10px;
+      }
+
+      > .close-icon {
+        width: 20px;
+        cursor: pointer;
+        padding: 24px;
+        @include mobile() {
+          padding: 11px;
+        }
+      }
+    }
+  }
+}

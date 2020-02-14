@@ -7,15 +7,15 @@ import Header from "components/Header"
 
 function ListUsers({ users }) {
   return (
-    <main>
+    <div className="list-users-page">
       <Helmet>
-        <title>Gatsby + Node.js (TypeScript) API</title>
+        <title>Juntos Somos +</title>
       </Helmet>
-      <Header />
+      <Header withSearch />
       {users.map(user => (
         <User {...user} key={user._id} />
       ))}
-    </main>
+    </div>
   )
 }
 

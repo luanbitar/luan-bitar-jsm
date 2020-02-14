@@ -1,0 +1,21 @@
+body * {
+  font-family: "Roboto", sans-serif;
+}
+
+#___gatsby {
+  width: 100%;
+  overflow: hidden;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.container {
+  max-width: 1190px;
+  padding: 0 24px;
+  margin: 0 auto;
+  @include mobile() {
+    padding: 0 11px;
+  }
+}

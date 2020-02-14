@@ -1,6 +1,6 @@
-<svg>
+<svg viewBox="0 0 700 200">
 	<defs>
-		<style>.cls-1{fill:#3c3535}.cls-2{fill:#ab2723}.cls-4{fill:#728529}.cls-6{fill:#ed7004}.cls-8{fill:#005f9f}</style>
+		<style>.cls-1{fill: currentColor}.cls-2{fill:#ab2723}.cls-4{fill:#728529}.cls-6{fill:#ed7004}.cls-8{fill:#005f9f}</style>
 		<linearGradient id="Gradiente_sem_nome_25" x1="65.95" y1="134.86" x2="17.69" y2="96.85" gradientUnits="userSpaceOnUse">
 			<stop offset="0" stop-color="#c93f2b"/>
 			<stop offset="1" stop-color="#ab2723"/>

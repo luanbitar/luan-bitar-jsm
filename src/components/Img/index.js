@@ -5,20 +5,16 @@ function Img({
   pictureRef,
   isLoading,
   className = "",
-  large,
-  thumbnail,
+  previewSrc,
+  src,
   alt = "",
 }) {
   const pictureClass = `${className} picture ${isLoading ? "-blured" : ""}`
   return (
     <picture ref={pictureRef} className={pictureClass}>
-      <source
-        srcSet={thumbnail}
-        data-srcset={large}
-        media="(min-width: 400px)"
-      />
+      <source srcSet={previewSrc} data-srcset={src} />
 
-      <img className="img-element" src={large} alt={alt} />
+      <img className="img-element" src={src} alt={alt} />
     </picture>
   )
 }
