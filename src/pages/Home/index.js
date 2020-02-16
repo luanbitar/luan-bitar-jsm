@@ -1,14 +1,14 @@
-import { Link } from "gatsby"
-
-import Header from "components/Header"
+import "./Home.scss"
+import Hero from "./components/Hero"
+import SelectUserType from "./components/SelectUserType"
 
 function Home() {
   return (
     <div className="home-container">
-      <Header />
       <main className="container">
-        <h1>Bem vindo a jsm</h1>
-        <Link to="/usuarios">Usuarios</Link>
+        <Hero />
+
+        <SelectUserType />
       </main>
     </div>
   )

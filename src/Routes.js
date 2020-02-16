@@ -7,4 +7,8 @@ module.exports = {
     path: "/usuarios",
     component: "src/pages/ListUsers/index.js",
   },
+  notfound: {
+    path: "/404",
+    component: "src/pages/NotFound/index.js",
+  },
 }

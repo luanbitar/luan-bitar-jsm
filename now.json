@@ -3,23 +3,19 @@
     "MONGO_DATABASE_URL": "@mongo-url",
     "MONGO_DATABASE_NAME": "@mongo-db-name"
   },
-  "headers": [
+  "version": 2,
+  "builds": [
     {
-      "source": "/(.*)",
-      "headers": [
-        {
-          "key": "Access-Control-Allow-Origin",
-          "value": "*"
-        },
-        {
-          "key": "Access-Control-Allow-Methods",
-          "value": "GET, POST, PATCH, PUT, DELETE, OPTIONS"
-        },
-        {
-          "key": "Access-Control-Allow-Headers",
-          "value": "Origin, X-Requested-With, Content-Type, Accept, Authorization, Methods"
-        }
-      ]
-    }
+      "src": "package.json",
+      "use": "@now/static-build",
+      "config": { "distDir": "public" }
+    },
+    { "src": "api/**/*.ts", "use": "@now/node" }
+  ],
+  "routes": [
+    { "src": "/api/users", "dest": "/api/users.ts" },
+    { "src": "/(.*)", "dest": "/$1" },
+    { "handle": "filesystem" },
+    { "src": "/.*", "status": 404, "dest": "/404" }
   ]
 }

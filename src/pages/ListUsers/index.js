@@ -1,8 +1,8 @@
 import "./ListUsers.scss"
 import { Helmet } from "react-helmet"
 
-import User from "./User"
 import ListUsersLogic from "./logic"
+import User from "./components/User"
 import Header from "components/Header"
 
 function ListUsers({ users }) {
