@@ -1,0 +1,7 @@
+@mixin shadow() {
+  box-shadow: none;
+  transition: box-shadow 0.2s ease;
+  &:hover {
+    box-shadow: 4px 6px 12px 1px #6b6b6b3b;
+  }
+}
