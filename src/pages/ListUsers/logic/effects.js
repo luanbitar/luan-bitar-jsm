@@ -1,22 +1,14 @@
-import axios from "axios"
+import useDidUpdateEffect from "utils/useDidUpdateEffect"
 import { useEffect } from "react"
 
-const { GATSBY_API_ROOT_URL } = process.env
-const USERS_URL = `${GATSBY_API_ROOT_URL || "/api"}/users`
-
-function effects({ setUsers }) {
+function effects({ getUsers, search, type, getQueryParams }) {
   useEffect(() => {
-    async function getUsers() {
-      const { data } = await axios.post(USERS_URL, {
-        label: "laborious",
-      })
-      const { users } = data
-
-      console.log({ data })
-      setUsers(users)
-    }
-    getUsers()
+    getQueryParams()
   }, [])
+
+  useDidUpdateEffect(() => {
+    getUsers()
+  }, [search, type])
 }
 
 export default effects

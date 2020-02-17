@@ -44,6 +44,7 @@
         flex-direction: column;
         width: 100%;
         max-width: 250px;
+        padding: 20px;
         cursor: pointer;
         border-radius: 10px;
         &:not(:last-of-type) {

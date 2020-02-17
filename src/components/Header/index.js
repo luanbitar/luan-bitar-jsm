@@ -7,14 +7,13 @@ import JSMLogo from "assets/jsm-logo.svg"
 import SearchIcon from "assets/search.svg"
 
 function Header({
-  isInputOpen,
-  setIsInputOpen,
+  inputClassName,
   onOpenSearchInput,
   inputRef,
   onSearchInputChange,
   withSearch,
+  onCloseSearchInput,
 }) {
-  const inputClassName = `input-container ${isInputOpen ? "-open" : ""}`
   return (
     <div className="header-container">
       <div className="container">
@@ -31,10 +30,7 @@ function Header({
             ref={inputRef}
             onChange={e => onSearchInputChange(e.target.value)}
           />
-          <CloseIcon
-            className="close-icon"
-            onClick={() => setIsInputOpen(false)}
-          />
+          <CloseIcon className="close-icon" onClick={onCloseSearchInput} />
         </div>
       </div>
     </div>
