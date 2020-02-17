@@ -1,0 +1,18 @@
+.empty-list-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 50px 0;
+  flex-direction: column;
+
+  > .message {
+    color: $quartz;
+    font-size: 18px;
+    font-weight: 300;
+  }
+
+  > .empty-illustration {
+    width: 100%;
+    max-width: 600px;
+  }
+}

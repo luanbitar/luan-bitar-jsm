@@ -1,2 +1,5 @@
 .list-users-page {
+  > .container {
+    min-height: calc(100vh - 500px);
+  }
 }

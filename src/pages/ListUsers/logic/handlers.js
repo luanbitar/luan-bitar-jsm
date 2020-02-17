@@ -3,9 +3,10 @@ import axios from "axios"
 const { GATSBY_API_ROOT_URL } = process.env
 const USERS_URL = `${GATSBY_API_ROOT_URL || "/api"}/users`
 
-function handlers({ setUsers, search, type, setType }) {
+function handlers({ setUsers, search, type, setType, setIsLoading }) {
   return {
     getUsers: function() {
+      setIsLoading(true)
       axios
         .post(USERS_URL, {
           search,
@@ -16,6 +17,7 @@ function handlers({ setUsers, search, type, setType }) {
 
           console.log({ data })
           setUsers(users)
+          setIsLoading(false)
         })
     },
     getQueryParams: function() {

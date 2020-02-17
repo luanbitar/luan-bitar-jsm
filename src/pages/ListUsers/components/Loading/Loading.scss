@@ -1,0 +1,42 @@
+.loading-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 50px 0;
+
+  > .loading-illustration {
+    width: 100%;
+    max-width: 800px;
+
+    #loading-dots {
+      transform-origin: center;
+      transform-box: fill-box;
+      animation: loadingRotation 2s infinite;
+    }
+  }
+}
+
+.loading-enter {
+  opacity: 0;
+}
+.loading-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+.loading-exit {
+  opacity: 1;
+}
+.loading-exit-active {
+  opacity: 0;
+  transition: opacity 500ms ease-in;
+}
+
+@keyframes loadingRotation {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
