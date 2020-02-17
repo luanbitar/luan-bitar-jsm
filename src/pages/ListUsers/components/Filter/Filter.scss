@@ -1,0 +1,39 @@
+.filter-container {
+  padding: 20px 0;
+
+  > .list-filters {
+    display: flex;
+    flex-wrap: wrap;
+
+    > .filter-icon {
+      width: 30px;
+      min-width: 30px;
+    }
+
+    > .filter-option {
+      border-width: 1px;
+      border-style: solid;
+      border-color: $quartz;
+      border-radius: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 5px 20px;
+      margin-left: 10px;
+      cursor: pointer;
+      color: $quartz;
+      margin-bottom: 15px;
+
+      &.-active {
+        background-color: $quartz;
+        color: white;
+      }
+    }
+  }
+
+  > .filter-info {
+    font-weight: 300;
+    font-size: 14px;
+    letter-spacing: 1px;
+  }
+}

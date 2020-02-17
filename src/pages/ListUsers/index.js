@@ -5,8 +5,9 @@ import ListUsersLogic from "./logic"
 import User from "./components/User"
 import Header from "components/Header"
 import Footer from "components/Footer"
+import Filter from "./components/Filter"
 
-function ListUsers({ users, setSearch, filterInfo }) {
+function ListUsers({ users, setSearch, search, type, setType }) {
   return (
     <div className="list-users-page">
       <Helmet>
@@ -15,7 +16,7 @@ function ListUsers({ users, setSearch, filterInfo }) {
       <Header withSearch onSearchChange={setSearch} />
 
       <main className="container">
-        {filterInfo}
+        <Filter search={search} type={type} changeType={setType} />
         {users.map(user => (
           <User {...user} key={user._id} />
         ))}

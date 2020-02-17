@@ -7,12 +7,12 @@ import JSMLogo from "assets/jsm-logo.svg"
 import SearchIcon from "assets/search.svg"
 
 function Header({
+  inputRef,
+  withSearch,
   inputClassName,
   onOpenSearchInput,
-  inputRef,
-  onSearchInputChange,
-  withSearch,
   onCloseSearchInput,
+  onSearchInputChange,
 }) {
   return (
     <div className="header-container">
