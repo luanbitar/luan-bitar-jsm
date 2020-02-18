@@ -1,17 +1,21 @@
-import capitalize from "utils/capitalize"
+import "./User.scss"
+import Logic from "./logic"
 import Img from "components/Img"
 
-function User({ name, picture }) {
-  const fullName = `${capitalize(name.first)} ${name.last}`
+function User({ fullName, city, state, largeUserProfile, thumbUserProfile }) {
   return (
     <div className="user-container">
-      <p className="name">{fullName}</p>
       <Img
         className="user-profile"
-        src={picture.large}
-        srcPreview={picture.thumbnail}
+        src={largeUserProfile}
+        previewSrc={thumbUserProfile}
+        debugTimeout={1000}
       />
+      <p className="user-name">{fullName}</p>
+      <p className="user-city">{city}</p>
+      <p className="user-state">{state}</p>
     </div>
   )
 }
-export default User
+
+export default Logic(User)

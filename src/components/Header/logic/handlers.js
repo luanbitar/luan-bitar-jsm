@@ -1,6 +1,4 @@
-import debounce from "utils/debounce"
-
-function handlers({ setIsInputOpen, inputRef, onSearchChange }) {
+function handlers({ setIsInputOpen, inputRef, setSearchInputValue }) {
   return {
     onOpenSearchInput: function() {
       setIsInputOpen(true)
@@ -10,11 +8,12 @@ function handlers({ setIsInputOpen, inputRef, onSearchChange }) {
     },
     onCloseSearchInput: function() {
       setIsInputOpen(false)
-      onSearchChange("")
+      setSearchInputValue("")
     },
-    onSearchInputChange: debounce(value => {
-      onSearchChange && onSearchChange(value)
-    }, 500),
+    onChangeSearchInput: function(e) {
+      const searchInputValue = e.target.value
+      setSearchInputValue(searchInputValue)
+    },
   }
 }
 

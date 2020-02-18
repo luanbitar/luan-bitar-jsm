@@ -1,3 +1,4 @@
+import "./UsersList.scss"
 import User from "../User"
 import EmptyList from "../EmptyList"
 import AnimationFade from "components/Animations/Fade"
@@ -10,11 +11,11 @@ function UsersList({ hasUsers, users }) {
       </AnimationFade>
     )
   return (
-    <AnimationFade className="list-users">
+    <div className="list-users">
       {users.map(user => (
         <User {...user} key={user._id} />
       ))}
-    </AnimationFade>
+    </div>
   )
 }
 

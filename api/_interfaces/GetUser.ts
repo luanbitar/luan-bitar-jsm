@@ -1,0 +1,3 @@
+interface GetUSer {
+  userID: string
+}

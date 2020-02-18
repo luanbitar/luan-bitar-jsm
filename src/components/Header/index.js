@@ -10,9 +10,10 @@ function Header({
   inputRef,
   withSearch,
   inputClassName,
+  searchInputValue,
   onOpenSearchInput,
   onCloseSearchInput,
-  onSearchInputChange,
+  onChangeSearchInput,
 }) {
   return (
     <div className="header-container">
@@ -28,7 +29,8 @@ function Header({
             className="search-input"
             type="text"
             ref={inputRef}
-            onChange={e => onSearchInputChange(e.target.value)}
+            onChange={onChangeSearchInput}
+            value={searchInputValue}
           />
           <CloseIcon className="close-icon" onClick={onCloseSearchInput} />
         </div>

@@ -3,30 +3,40 @@
 
   > .list-filters {
     display: flex;
-    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
 
     > .filter-icon {
       width: 30px;
       min-width: 30px;
     }
 
-    > .filter-option {
-      border-width: 1px;
-      border-style: solid;
-      border-color: $quartz;
-      border-radius: 30px;
+    > .filter-itens {
       display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 5px 20px;
-      margin-left: 10px;
-      cursor: pointer;
-      color: $quartz;
-      margin-bottom: 15px;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      align-items: flex-start;
 
-      &.-active {
-        background-color: $quartz;
-        color: white;
+      > .filter-option {
+        border-width: 1px;
+        border-style: solid;
+        border-color: $quartz;
+        border-radius: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 5px 20px;
+        margin-left: 10px;
+        cursor: pointer;
+        color: $quartz;
+        margin-bottom: 15px;
+        transition: all 0.3s ease;
+        @include shadow();
+
+        &.-active {
+          background-color: $quartz;
+          color: white;
+        }
       }
     }
   }

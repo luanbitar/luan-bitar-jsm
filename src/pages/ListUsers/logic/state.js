@@ -1,9 +1,9 @@
 import { useState } from "react"
 
 function state() {
-  const [type, setType] = useState("")
+  const [type, setType] = useState(null)
   const [users, setUsers] = useState([])
-  const [search, setSearch] = useState("")
+  const [search, setSearch] = useState(null)
   const [pageNumber, setPageNumber] = useState(1)
   const [isLoading, setIsLoading] = useState(true)
 

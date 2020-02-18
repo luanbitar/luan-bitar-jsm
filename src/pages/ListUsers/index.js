@@ -12,9 +12,9 @@ function ListUsers({
   type,
   users,
   search,
-  setType,
+  onTypeChange,
   hasUsers,
-  setSearch,
+  onSearchChange,
   isLoading,
 }) {
   return (
@@ -23,10 +23,10 @@ function ListUsers({
         <title>Juntos Somos +</title>
       </Helmet>
 
-      <Header withSearch onSearchChange={setSearch} />
+      <Header withSearch onSearchChange={onSearchChange} />
 
       <main className="container">
-        <Filter search={search} type={type} changeType={setType} />
+        <Filter search={search} type={type} onTypeChange={onTypeChange} />
 
         {isLoading ? (
           <Loading />

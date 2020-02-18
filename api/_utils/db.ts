@@ -6,7 +6,6 @@ export default async function getDatabaseReference() {
   if (cachedDb) return cachedDb
 
   const MONGOURL = process.env.MONGO_DATABASE_URL || ""
-  console.log({ MONGOURL })
   const connection = await MongoClient.connect(MONGOURL, {
     useNewUrlParser: true,
     useUnifiedTopology: true,

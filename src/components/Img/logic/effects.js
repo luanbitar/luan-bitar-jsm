@@ -1,6 +1,6 @@
 import { useEffect } from "react"
 
-function effects({ pictureRef, setIsLoading, ...props }) {
+function effects({ pictureRef, setIsLoading, debugTimeout = 0 }) {
   useEffect(() => {
     function lazyload(entries) {
       entries.forEach(({ isIntersecting, target }) => {
@@ -12,8 +12,10 @@ function effects({ pictureRef, setIsLoading, ...props }) {
         sourcesElements.forEach(sourceElement => {
           const largeSrcSet = sourceElement.dataset.srcset
 
-          sourceElement.setAttribute("srcset", largeSrcSet)
-          imageElement.onload = () => setIsLoading(false)
+          setTimeout(() => {
+            sourceElement.setAttribute("srcset", largeSrcSet)
+            imageElement.onload = () => setIsLoading(false)
+          }, debugTimeout)
         })
 
         observer.unobserve(target)

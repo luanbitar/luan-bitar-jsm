@@ -1,7 +1,8 @@
 import { NowRequest, NowResponse } from "@now/node"
-import getDatabaseReference from "./_utils/db"
-import labels from "./_data/labels"
+
 import cors from "./_utils/cors"
+import labels from "./_data/labels"
+import getDatabaseReference from "./_utils/db"
 
 export default async (req: NowRequest, res: NowResponse) => {
   cors(req, res)
@@ -26,7 +27,9 @@ export default async (req: NowRequest, res: NowResponse) => {
           ],
         }),
       },
-      labels[label],
+      {
+        ...(labels && labels[label]),
+      },
     ],
   }
   const currentPage: number = pageNumber >= 1 ? pageNumber - 1 : 0

@@ -19,22 +19,26 @@ function FilterItem({ selectedType, mapType, onClick }) {
   )
 }
 
-function Filter({ type, search, changeType }) {
+function Filter({ type, search, onTypeChange }) {
   const searchText = search ? ` com nome: ${search}` : ""
-  const filterInfo = `Buscando usuários ${translateType[type]}${searchText}`
+  const allUsersText = !!translateType[type] ? "" : "todos os "
+  const typeText = translateType[type] ? translateType[type] : ""
+  const filterInfo = `Buscando ${allUsersText}usuários ${typeText}${searchText}`
 
   return (
     <section className="filter-container">
       <div className="list-filters">
         <FilterIcon className="filter-icon" />
-        {Object.keys(translateType).map(mapType => (
-          <FilterItem
-            key={mapType}
-            selectedType={type}
-            mapType={mapType}
-            onClick={() => changeType(mapType)}
-          />
-        ))}
+        <div className="filter-itens">
+          {Object.keys(translateType).map(mapType => (
+            <FilterItem
+              key={mapType}
+              selectedType={type}
+              mapType={mapType}
+              onClick={() => onTypeChange(mapType)}
+            />
+          ))}
+        </div>
       </div>
       <p className="filter-info">{filterInfo}</p>
     </section>
