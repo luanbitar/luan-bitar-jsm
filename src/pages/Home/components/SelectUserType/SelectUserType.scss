@@ -47,10 +47,14 @@
         padding: 20px;
         cursor: pointer;
         border-radius: 10px;
+        box-shadow: none;
+        transition: box-shadow 0.2s ease;
+        &:hover {
+          box-shadow: 4px 6px 12px 1px #fff1ef;
+        }
         &:not(:last-of-type) {
           margin-bottom: 30px;
         }
-        @include shadow;
 
         > .illustration-wrapper {
           width: 100%;
