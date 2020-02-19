@@ -1,5 +1,24 @@
 .user-details-page {
   > .container {
     min-height: calc(100vh - 500px);
+
+    > .back-container {
+      display: flex;
+      align-items: center;
+      padding: 20px 0;
+      width: 200px;
+      text-decoration: none;
+
+      > .back-icon {
+        width: 20px;
+      }
+
+      > .back-label {
+        font-size: 14px;
+        color: $quartz;
+        margin-left: 10px;
+        font-weight: 300;
+      }
+    }
   }
 }

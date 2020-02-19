@@ -1,30 +1,32 @@
 $img-size: 128px;
 
-.user-container {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  padding: 20px;
-  cursor: pointer;
+.list-users-page {
+  .user-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    cursor: pointer;
 
-  > .user-profile {
-    width: $img-size;
-    height: $img-size;
-    > .img-element {
-      border-radius: $img-size;
+    > .user-profile {
+      width: $img-size;
+      height: $img-size;
+      > .img-element {
+        border-radius: $img-size;
+      }
     }
-  }
 
-  > .user-name {
-    margin-top: 10px;
-    color: $quartz;
-  }
+    > .user-name {
+      margin-top: 10px;
+      color: $quartz;
+    }
 
-  > .user-city,
-  > .user-state {
-    color: $grey-2;
-    font-size: 14px;
-    margin-top: 5px;
-    font-weight: 300;
+    > .user-city,
+    > .user-state {
+      color: $grey-2;
+      font-size: 14px;
+      margin-top: 5px;
+      font-weight: 300;
+    }
   }
 }

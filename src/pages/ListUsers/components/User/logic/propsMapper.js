@@ -5,7 +5,9 @@ function propsMapper({ name, picture, location, ...props }) {
   const largeUserProfile = picture ? picture.large : ""
   const state = location ? capitalize(location.state) : ""
   const thumbUserProfile = picture ? picture.thumbnail : ""
-  const fullName = name ? `${capitalize(name.first)} ${name.last}` : ""
+  const fullName = name
+    ? `${capitalize(name.first)} ${capitalize(name.last)}`
+    : ""
 
   return {
     city,
