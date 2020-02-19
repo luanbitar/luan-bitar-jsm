@@ -4,18 +4,18 @@ import { Helmet } from "react-helmet"
 import ListUsersLogic from "./logic"
 import Header from "components/Header"
 import Footer from "components/Footer"
+import Loading from "components/Loading"
 import Filter from "./components/Filter"
-import Loading from "./components/Loading"
 import UsersList from "./components/UsersList"
 
 function ListUsers({
   type,
   users,
   search,
-  onTypeChange,
   hasUsers,
-  onSearchChange,
   isLoading,
+  onTypeChange,
+  onSearchChange,
 }) {
   return (
     <div className="list-users-page">
@@ -31,7 +31,12 @@ function ListUsers({
         {isLoading ? (
           <Loading />
         ) : (
-          <UsersList hasUsers={hasUsers} users={users} />
+          <UsersList
+            hasUsers={hasUsers}
+            users={users}
+            type={type}
+            search={search}
+          />
         )}
       </main>
 
