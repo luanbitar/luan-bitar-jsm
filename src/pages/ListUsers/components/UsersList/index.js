@@ -4,8 +4,14 @@ import EmptyList from "../EmptyList"
 import UsersListLogic from "./logic"
 import AnimationFade from "components/Animations/Fade"
 
-function UsersList({ hasUsers, users, goToUserDetail, lastItemRef }) {
-  if (!hasUsers)
+function UsersList({
+  users,
+  hasUsers,
+  isLoading,
+  lastItemRef,
+  goToUserDetail,
+}) {
+  if (!hasUsers && !isLoading)
     return (
       <AnimationFade>
         <EmptyList />

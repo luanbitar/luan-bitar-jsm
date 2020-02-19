@@ -35,6 +35,7 @@ function ListUsers({
           type={type}
           search={search}
           lastItemRef={lastItemRef}
+          isLoading={isLoading}
         />
         {isLoading && <Loading />}
       </main>
