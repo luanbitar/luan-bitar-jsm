@@ -4,7 +4,7 @@ import EmptyList from "../EmptyList"
 import UsersListLogic from "./logic"
 import AnimationFade from "components/Animations/Fade"
 
-function UsersList({ hasUsers, users, goToUserDetail }) {
+function UsersList({ hasUsers, users, goToUserDetail, lastItemRef }) {
   if (!hasUsers)
     return (
       <AnimationFade>
@@ -13,13 +13,17 @@ function UsersList({ hasUsers, users, goToUserDetail }) {
     )
   return (
     <div className="list-users">
-      {users.map(user => (
-        <User
-          {...user}
-          key={user._id}
-          onClick={() => goToUserDetail(user._id)}
-        />
-      ))}
+      {users.map((user, index) => {
+        const isLastItem = users.length === index + 1
+        const userProps = {
+          ...(isLastItem && { refLastItem: lastItemRef, ultimo: true }),
+          ...user,
+          key: user._id,
+          onClick: () => goToUserDetail(user._id),
+        }
+
+        return <User {...userProps} />
+      })}
     </div>
   )
 }

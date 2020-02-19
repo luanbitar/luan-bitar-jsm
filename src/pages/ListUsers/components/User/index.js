@@ -9,9 +9,10 @@ function User({
   fullName,
   largeUserProfile,
   thumbUserProfile,
+  refLastItem,
 }) {
   return (
-    <div className="user-container" onClick={onClick}>
+    <div className="user-container" onClick={onClick} ref={refLastItem}>
       <Img
         className="user-profile"
         src={largeUserProfile}

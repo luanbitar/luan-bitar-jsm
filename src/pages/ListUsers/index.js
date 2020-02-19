@@ -13,6 +13,7 @@ function ListUsers({
   users,
   search,
   hasUsers,
+  lastItemRef,
   isLoading,
   onTypeChange,
   onSearchChange,
@@ -28,16 +29,14 @@ function ListUsers({
       <main className="container">
         <Filter search={search} type={type} onTypeChange={onTypeChange} />
 
-        {isLoading ? (
-          <Loading />
-        ) : (
-          <UsersList
-            hasUsers={hasUsers}
-            users={users}
-            type={type}
-            search={search}
-          />
-        )}
+        <UsersList
+          hasUsers={hasUsers}
+          users={users}
+          type={type}
+          search={search}
+          lastItemRef={lastItemRef}
+        />
+        {isLoading && <Loading />}
       </main>
 
       <Footer />

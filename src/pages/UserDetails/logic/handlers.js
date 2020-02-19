@@ -15,7 +15,6 @@ function handlers({ userID, setUser, setUserID, setIsLoading }) {
         .then(({ data }) => {
           const { user } = data
 
-          console.log({ data })
           setUser(user[0])
           setIsLoading(false)
         })

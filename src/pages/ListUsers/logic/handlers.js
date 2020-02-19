@@ -5,30 +5,42 @@ const { GATSBY_API_ROOT_URL } = process.env
 const USERS_URL = `${GATSBY_API_ROOT_URL || "/api"}/users`
 
 function handlers({
-  setUsers,
-  search,
   type,
+  search,
   setType,
-  setIsLoading,
+  setUsers,
+  pageSize,
   setSearch,
+  setIsLoading,
+  setPageNumber,
+  setTotalCount,
+  users: usersState,
 }) {
   function setQueryParams({ newType = type, newSearch = search }) {
     navigate(`?type=${newType}&search=${newSearch}`)
   }
 
   return {
-    getUsers: function() {
+    getUsers: function({ pageNumber = 1 } = {}) {
       setIsLoading(true)
       axios
         .post(USERS_URL, {
           search,
           label: type,
+          pageNumber,
+          pageSize,
         })
         .then(({ data }) => {
-          const { users } = data
+          const { users: usersData, totalCount } = data
+          setTotalCount(totalCount)
+          setPageNumber(pageNumber + 1)
 
-          console.log({ data })
+          const users =
+            pageNumber === 1 ? usersData : [...usersState, ...usersData]
           setUsers(users)
+          setIsLoading(false)
+        })
+        .catch(() => {
           setIsLoading(false)
         })
     },
