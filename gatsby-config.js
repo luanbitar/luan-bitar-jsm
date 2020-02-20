@@ -24,10 +24,11 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Rita RH`,
-        short_name: `Rita RH`,
+        name: `Luan Bitar | JSM`,
+        short_name: `Luan Bitar | JSM`,
         start_url: `/`,
-        icon: `src/images/gatsby-icon.png`,
+        theme_color: `#524948`,
+        icon: `src/images/jsm-logo.png`,
       },
     },
     {
